@@ -1,4 +1,4 @@
-import { Await, createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import App from "../../App";
 import Shop from "../Shop/Shop";
 import Home from "../Home/Home";
@@ -40,7 +40,9 @@ export const router = createBrowserRouter([
         path: "/food/:id",
         element: <SingleFood />,
         loader: ({ params }) =>
-          fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.id}`),
+          fetch(
+            `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.id}`
+          ),
       },
     ],
   },

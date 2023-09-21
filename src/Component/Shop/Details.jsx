@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const Details = ({ data }) => {
   const { strInstructions, strMeal, strMealThumb } = data;
@@ -26,5 +27,8 @@ const Details = ({ data }) => {
     </div>
   );
 };
+Details.propTypes = {
+    data: PropTypes.array,
+  };
 
 export default Details;

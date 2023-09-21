@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const FoodDetails = ({ food }) => {
   const navigate = useNavigate();
@@ -6,7 +7,7 @@ const FoodDetails = ({ food }) => {
   const { idMeal, strMealThumb, strMeal } = food;
 
   const handleBuyFood = () => {
-    navigate(`/food/${idMeal}`)
+    navigate(`/food/${idMeal}`);
   };
   return (
     <div className="card bg-base-100 shadow-xl flex flex-col">
@@ -21,6 +22,9 @@ const FoodDetails = ({ food }) => {
       </button>
     </div>
   );
+};
+FoodDetails.propTypes = {
+  food: PropTypes.array,
 };
 
 export default FoodDetails;
